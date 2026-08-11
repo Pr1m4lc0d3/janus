@@ -1,11 +1,12 @@
 ---
-name: janusian
+name: janus
 description: Turn a product's contradictions into its positioning. Use when a product, offer, or brand carries two opposed things that both must be true — private vs. social, premium vs. free, simple vs. powerful, subscription vs. ownership — and picking one side would kill the product. Also use when positioning reads generic and the differentiator is missing, or to audit an existing design doc for contradictions being carried unnamed. Not for architecture tradeoffs, debugging, or engineering decisions that should resolve.
 ---
 
-# Janusian
+# Janus
 
-Named for Janus, who faces both ways at once.
+Named for the god who faces both ways at once. The method is Rothenberg's
+**Janusian** thinking; this skill is the product.
 
 Most frameworks treat a contradiction as a defect to dissolve. This one treats it as the
 raw material. You hold both poles at full strength, refuse every resolution, and the

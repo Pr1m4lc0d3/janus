@@ -1,6 +1,6 @@
 <img src="og/janus-og.png" alt="Janus — product positioning skill for Claude Code" width="100%">
 
-# Janusian
+# Janus
 
 **Turn a product's contradictions into its positioning.**
 
@@ -19,7 +19,8 @@ Every published thinking framework treats a contradiction as a problem to dissol
 | Inversion | Flips it — you still end up holding one side |
 | Six Thinking Hats | Sequences it — one lens at a time |
 
-Janusian does the opposite. Named for the god who faces both ways at once, it comes from
+Janus does the opposite. The method is **Janusian** thinking, named for the god who faces
+both ways at once, and it comes from
 Albert Rothenberg's studies of highly creative scientists and artists: actively conceiving
 two opposite ideas as **simultaneously true**, and refusing to resolve them.
 
@@ -36,11 +37,11 @@ differentiator you were missing.
 **Claude Code**
 
 ```bash
-git clone https://github.com/<you>/janusian
-cp -r janusian/janusian ~/.claude/skills/
+git clone https://github.com/<you>/janus
+cp -r janus/janus ~/.claude/skills/
 ```
 
-Or drop the `janusian/` folder into `.claude/skills/` in a single project.
+Or drop the `janus/` folder into `.claude/skills/` in a single project.
 
 Then invoke it by name, or just describe a product contradiction and it will offer itself.
 
