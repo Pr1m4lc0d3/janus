@@ -1,3 +1,5 @@
+<img src="og/janus-og.png" alt="Janus — product positioning skill for Claude Code" width="100%">
+
 # Janusian
 
 **Turn a product's contradictions into its positioning.**
