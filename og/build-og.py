@@ -46,7 +46,7 @@ CONFIGS = {
             "Openings that earn the next paragraph",
             "Every claim sourced. No invented detail.",
         ],
-        footer="github.com/Pr1m4lc0d3/peitho",
+        meta="MIT  ·  10 openings taken apart  ·  every claim evidence-tiered",
     ),
     "janus": dict(
         out="janus-og.png",
@@ -61,7 +61,7 @@ CONFIGS = {
             "Ban the three exits: compromise, sequence, segment",
             "Harvest a mechanism, not a slogan. Neither pole weakens.",
         ],
-        footer="github.com/Pr1m4lc0d3/janus",
+        meta="MIT  ·  5 steps  ·  3 worked examples",
     ),
 }
 
@@ -143,7 +143,10 @@ def build(cfg, src_path):
         d.text((col_x + 22, y), b, font=bullet_font, fill=MUTED)
         y += 40
 
-    tracked(d, (col_x, H - 140), cfg["footer"], ImageFont.truetype(str(F_MONOISH), 22), GOLD, 2.2)
+    # Bottom line carries facts, never the repo URL. This card is only ever seen
+    # attached to that URL, so printing it tells the viewer where they already
+    # are and spends the last legible line on nothing.
+    tracked(d, (col_x, H - 140), cfg["meta"], ImageFont.truetype(str(F_MONOISH), 21), MUTED, 1.4)
 
     out = HERE / cfg["out"]
     canvas.save(out, optimize=True)
