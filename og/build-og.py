@@ -53,7 +53,7 @@ CONFIGS = {
         box=(134, 175, 577, 843),
         kicker="CONTRADICTION IS THE POSITION",
         headline="Every other framework dissolves a contradiction. This one refuses.",
-        # Straight from janus/SKILL.md steps 1, 2 and 4. Do NOT write "what a
+        # Straight from skills/janus/SKILL.md steps 1, 2 and 4. Do NOT write "what a
         # rival must give up" here: that is Idea Forge Pro's moat gate, a
         # different thing, and Janus is explicitly not a pipeline stage.
         bullets=[
