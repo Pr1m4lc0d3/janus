@@ -1,4 +1,4 @@
-<img src="og/janus-og.png" alt="Janus — product positioning skill for Claude Code" width="100%">
+<img src="og/janus-og.png" alt="Janus, a product positioning skill for Claude Code" width="100%">
 
 # Janus
 
@@ -14,10 +14,10 @@ Every published thinking framework treats a contradiction as a problem to dissol
 
 | Framework | What it does with a contradiction |
 |---|---|
-| TRIZ | Resolves it — engineers the incompatibility away |
-| Dialectical thinking | Collapses it — thesis, antithesis, **synthesis** |
-| Inversion | Flips it — you still end up holding one side |
-| Six Thinking Hats | Sequences it — one lens at a time |
+| TRIZ | Resolves it. Engineers the incompatibility away |
+| Dialectical thinking | Collapses it. Thesis, antithesis, **synthesis** |
+| Inversion | Flips it. You still end up holding one side |
+| Six Thinking Hats | Sequences it. One lens at a time |
 
 Janus does the opposite. The method is **Janusian** thinking, named for the god who faces
 both ways at once, and it comes from
@@ -25,7 +25,7 @@ Albert Rothenberg's studies of highly creative scientists and artists: actively 
 two opposite ideas as **simultaneously true**, and refusing to resolve them.
 
 Einstein's falling man is both at rest and in motion. The refusal is what produced general
-relativity — not the compromise.
+relativity, not the compromise.
 
 Applied to products: the mechanism that lets both poles be fully true **is** the
 differentiator you were missing.
@@ -34,29 +34,36 @@ differentiator you were missing.
 
 ## Install
 
-**Claude Code**
+**As a plugin** (recommended, and it updates in place)
 
-```bash
-git clone https://github.com/<you>/janus
-cp -r janus/janus ~/.claude/skills/
+```
+/plugin marketplace add Pr1m4lc0d3/janus
+/plugin install janus@janus
 ```
 
-Or drop the `janus/` folder into `.claude/skills/` in a single project.
+**By hand**
+
+```bash
+git clone https://github.com/Pr1m4lc0d3/janus
+cp -r janus/skills/janus ~/.claude/skills/
+```
+
+Or drop `skills/janus/` into `.claude/skills/` in a single project.
 
 Then invoke it by name, or just describe a product contradiction and it will offer itself.
 
-**Other agents** — the skill is a single `SKILL.md` with YAML frontmatter. It works anywhere
+**Other agents.** The skill is a single `SKILL.md` with YAML frontmatter. It works anywhere
 the Agent Skills format is supported.
 
 ---
 
 ## How it runs
 
-1. **Name the pair** — with a fake-tension filter that discards preferences masquerading as contradictions
-2. **Ban the three exits** — compromise, sequence, segment. Every other framework takes one of these
-3. **Force simultaneity** — what must be true for both poles to be fully true, at once, for the same person?
-4. **Harvest a mechanism** — not a slogan, not a balance. A quality gate rejects compromises in disguise
-5. **Register the tension** — so a later decision can't quietly kill a pole without anyone noticing
+1. **Name the pair**, with a fake-tension filter that discards preferences masquerading as contradictions
+2. **Ban the three exits:** compromise, sequence, segment. Every other framework takes one of these
+3. **Force simultaneity.** What must be true for both poles to be fully true, at once, for the same person?
+4. **Harvest a mechanism,** not a slogan and not a balance. A quality gate rejects compromises in disguise
+5. **Register the tension,** so a later decision can't quietly kill a pole without anyone noticing
 
 ---
 
@@ -84,7 +91,7 @@ Two more worked examples are in the skill.
 **Don't use it for** architecture tradeoffs, debugging, or engineering decisions that should
 resolve. The skill says so itself and will decline.
 
-It fires rarely — a handful of times a year on a given product. The value is per-firing, not
+It fires rarely, a handful of times a year on a given product. The value is per-firing, not
 per-day.
 
 ---
@@ -93,7 +100,7 @@ per-day.
 
 The `## Held tensions` register it writes into your design doc is a tripwire.
 
-Six months on, a reasonable-looking decision quietly kills one pole — a sync feature that
+Six months on, a reasonable-looking decision quietly kills one pole: a sync feature that
 caches server-side, a pricing tier that charges for the thing you promised was free. Without
 the register, nobody notices until the marketing site is telling a lie the code stopped
 supporting.

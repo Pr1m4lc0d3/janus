@@ -1,0 +1,35 @@
+{
+  "name": "janus",
+  "owner": {
+    "name": "Ryan Heltemes",
+    "url": "https://ryan-heltemes.com"
+  },
+  "metadata": {
+    "description": "Turn a product's contradictions into its positioning.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "janus",
+      "source": "./",
+      "description": "Two things about your product that contradict each other are the position you were missing. Bans the three escapes (compromise, sequence, segment) and forces the mechanism that makes both true.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Ryan Heltemes",
+        "url": "https://ryan-heltemes.com"
+      },
+      "homepage": "https://github.com/Pr1m4lc0d3/janus",
+      "repository": "https://github.com/Pr1m4lc0d3/janus",
+      "license": "MIT",
+      "keywords": [
+        "positioning",
+        "product-strategy",
+        "marketing",
+        "founders",
+        "differentiation",
+        "brand",
+        "skills"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: janus
-description: Turn a product's contradictions into its positioning. Use when a product, offer, or brand carries two opposed things that both must be true — private vs. social, premium vs. free, simple vs. powerful, subscription vs. ownership — and picking one side would kill the product. Also use when positioning reads generic and the differentiator is missing, or to audit an existing design doc for contradictions being carried unnamed. Not for architecture tradeoffs, debugging, or engineering decisions that should resolve.
+description: Turn a product's contradictions into its positioning. Use when a product, offer, or brand carries two opposed things that both must be true (private vs. social, premium vs. free, simple vs. powerful, subscription vs. ownership) and picking one side would kill the product. Also use when positioning reads generic and the differentiator is missing, or to audit an existing design doc for contradictions being carried unnamed. Not for architecture tradeoffs, debugging, or engineering decisions that should resolve.
 ---
 
 # Janus
@@ -18,7 +18,7 @@ The refusal is the whole technique. Everything below exists to stop you resolvin
 
 ## When this applies
 
-Use it when a contradiction is **structural** — when both poles have a constituency and
+Use it when a contradiction is **structural**: when both poles have a constituency and
 killing either one kills the product.
 
 Do **not** use it for:
@@ -32,7 +32,7 @@ Do **not** use it for:
 
 ---
 
-## Step 1 — Name the pair
+## Step 1. Name the pair
 
 Write the two poles as plain assertions, not adjectives.
 
@@ -41,7 +41,7 @@ Write the two poles as plain assertions, not adjectives.
 
 ### The fake-tension filter
 
-**Name a living person who wants each pole, and say why.** Not a persona sketch — an actual
+**Name a living person who wants each pole, and say why.** Not a persona sketch. An actual
 describable human with a reason.
 
 If you cannot name a constituency for both sides, it is not a tension. It is a preference,
@@ -49,16 +49,16 @@ a constraint, or a decision someone is avoiding. **Stop and discard it.**
 
 Common fakes:
 
-- *"Secure and easy"* — nobody wants insecure. That's a UX budget.
-- *"Fast and cheap"* — nobody wants slow. That's an engineering tradeoff.
-- *"Good and profitable"* — too abstract to force anything.
+- *"Secure and easy."* Nobody wants insecure. That's a UX budget.
+- *"Fast and cheap."* Nobody wants slow. That's an engineering tradeoff.
+- *"Good and profitable."* Too abstract to force anything.
 
 A real pair sounds uncomfortable when you say it out loud. If it sounds reasonable, it's
 probably fake.
 
 ---
 
-## Step 2 — Ban the three exits
+## Step 2. Ban the three exits
 
 Every existing framework takes one of these. Write them out and rule each one dead before
 going further. Naming them is what stops you sliding into one without noticing.
@@ -75,16 +75,16 @@ You now have no way out except through.
 
 ---
 
-## Step 3 — Force simultaneity
+## Step 3. Force simultaneity
 
 The question, asked exactly:
 
-> **What must be true for both poles to be fully true — in the same thing, at the same time,
+> **What must be true for both poles to be fully true, in the same thing, at the same time,
 > for the same person?**
 
 If that stalls, invert it. These are the productive forms:
 
-- How does **A** *cause* **B**? Not tolerate it — cause it.
+- How does **A** *cause* **B**? Not tolerate it. Cause it.
 - What would make **B** the *proof* of **A**?
 - What kind of thing gets **more** A the more B it does?
 - Who would be delighted by both at once, and what are they holding?
@@ -94,9 +94,9 @@ answers will be compromises wearing a disguise.
 
 ---
 
-## Step 4 — Harvest
+## Step 4. Harvest
 
-The output is a **mechanism** — a concrete thing the product does — not a slogan and not a
+The output is a **mechanism**, a concrete thing the product does. Not a slogan and not a
 balance.
 
 ### The quality gate
@@ -109,20 +109,20 @@ at full strength or the answer is wrong.
 Second check: **is it a mechanism or an adjective?** "Balanced," "thoughtful," and
 "best of both" are failures. "The server structurally cannot read your data" is a mechanism.
 
-The positioning line falls out of the mechanism afterward. Never write the line first — a
+The positioning line falls out of the mechanism afterward. Never write the line first: a
 line without a mechanism underneath it is marketing, and it will not survive contact with a
 customer who asks *how*.
 
 ---
 
-## Step 5 — Register the tension
+## Step 5. Register the tension
 
 Append to `design.md` (or whatever your project's design doc of record is):
 
 ```markdown
 ## Held tensions
 
-- **Private ⟷ Collaborative** — do NOT resolve, both ship.
+- **Private ⟷ Collaborative.** Do NOT resolve, both ship.
   Mechanism: sharing grants a revocable, expiring capability; the host never holds the document.
   Killed pole warning: any feature that stores a copy server-side kills Private.
 ```
@@ -130,8 +130,8 @@ Append to `design.md` (or whatever your project's design doc of record is):
 This is the part everyone skips and it is the part that pays twice.
 
 A registered tension can be **audited**. Six months later, a reasonable-looking decision
-quietly kills one pole — a sync feature that caches server-side, a tier that charges for the
-thing you said was free — and without the register, nobody notices until the website is
+quietly kills one pole (a sync feature that caches server-side, a tier that charges for the
+thing you said was free) and without the register, nobody notices until the website is
 telling a lie the code stopped supporting.
 
 Write the **killed pole warning** explicitly. It is the tripwire.
@@ -140,15 +140,15 @@ Write the **killed pole warning** explicitly. It is the tripwire.
 
 ## Two entry modes
 
-**Handed** — the user names the pair. Run steps 1–5.
+**Handed.** The user names the pair. Run steps 1–5.
 
-**Extracted** — point at an existing `design.md`, landing page, or product copy and find the
+**Extracted.** Point at an existing `design.md`, landing page, or product copy and find the
 tensions being carried unnamed. Look for:
 
 - Two claims that cannot both be maximally true (`totally private` + `share with your team`)
 - A promise the pricing page contradicts
 - A value in the design doc that no shipped feature expresses
-- Hedging language — "while still," "yet also," "balanced with" — which marks a compromise
+- Hedging language ("while still," "yet also," "balanced with") which marks a compromise
   that was never examined
 
 Surface them as pairs, apply the fake-tension filter, then run the strongest one through
@@ -207,10 +207,10 @@ Both poles at full strength: it genuinely wants you gone, and you genuinely open
 
 ---
 
-## Optional — projects using KISS
+## Optional. Projects using KISS
 
 If the repo follows the KISS discipline, this runs **between** `kiss-plan` step 2 (check the
-map) and step 5 (write the design doc), on the **product** design doc — not on the module
+map) and step 5 (write the design doc), on the **product** design doc, not on the module
 plan. There is no productive paradox in "which file owns the parser."
 
 The `## Held tensions` block registered in step 5 becomes an input to `kiss-coherence`, which

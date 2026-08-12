@@ -1,0 +1,21 @@
+{
+  "name": "janus",
+  "description": "Turn a product's contradictions into its positioning. Every other thinking framework dissolves a contradiction; this one refuses, and takes the mechanism that falls out.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Ryan Heltemes",
+    "url": "https://ryan-heltemes.com"
+  },
+  "homepage": "https://github.com/Pr1m4lc0d3/janus",
+  "repository": "https://github.com/Pr1m4lc0d3/janus",
+  "license": "MIT",
+  "keywords": [
+    "positioning",
+    "product-strategy",
+    "marketing",
+    "founders",
+    "differentiation",
+    "brand",
+    "skills"
+  ]
+}
