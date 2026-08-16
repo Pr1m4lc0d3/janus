@@ -112,3 +112,15 @@ With it, that drift is auditable.
 ## License
 
 MIT
+
+---
+
+## Where this came from
+
+Deliberon is a Windows desktop app that runs a council of AI agents on a hard decision and hands back a Decision Record: dissent preserved, every claim marked as proved, asserted, or estimated.
+
+Janus is the positioning method behind how it is framed, published in full because a positioning move you cannot read is one you cannot evaluate.
+
+Pay once, it's yours, no subscription. Thirty days of the full council with no account and no card. Runs on your machine with your own model keys.
+
+https://deliberon.com
