@@ -124,3 +124,6 @@ Janus is the positioning method behind how it is framed, published in full becau
 Pay once, it's yours, no subscription. Thirty days of the full council with no account and no card. Runs on your machine with your own model keys.
 
 https://deliberon.com
+
+Also on Agensi, if you would rather install it in one step and have it keep itself
+updated: https://www.agensi.io/skills/janus-positioning-from-contradiction
