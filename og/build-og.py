@@ -46,7 +46,7 @@ CONFIGS = {
             "Openings that earn the next paragraph",
             "Every claim sourced. No invented detail.",
         ],
-        meta="MIT  ·  10 openings taken apart  ·  every claim evidence-tiered",
+        meta="10 openings taken apart  ·  every claim evidence-tiered",
     ),
     "janus": dict(
         out="janus-og.png",
@@ -61,7 +61,38 @@ CONFIGS = {
             "Ban the three exits: compromise, sequence, segment",
             "Harvest a mechanism, not a slogan. Neither pole weakens.",
         ],
-        meta="MIT  ·  5 steps  ·  3 worked examples",
+        meta="5 steps  ·  3 worked examples",
+    ),
+    "metaphrasis": dict(
+        out="metaphrasis-og.png",
+        box=(2, 122, 906, 945),
+        # This artwork's binary field runs to x=906, past the default patch.
+        tex=(980, 620, 1500, 1010),
+        kicker="MEASURED, NOT HEARD",
+        headline="Audio, rendered as something a model can read.",
+        # Straight from skills/metaphrasis/SKILL.md. Do NOT write "understands"
+        # or "listens" here: the skill's whole discipline is that it measures,
+        # and the first artwork failed review for claiming AI understanding.
+        bullets=[
+            "Tempo, key, loudness, structure",
+            "Where a track can be cut, and joined",
+            "Whether the bed is burying the voice",
+        ],
+        meta="librosa + ffmpeg  ·  runs offline",
+    ),
+    "paraphrasis": dict(
+        out="paraphrasis-og.png",
+        box=(48, 83, 865, 897),
+        kicker="THE MEANING HOLDS STILL",
+        headline="Everything may change except what is being claimed.",
+        # Do NOT write "persuade" here: persuasion is peitho's job and is the
+        # pressure that causes drift. This skill guards the claim.
+        bullets=[
+            "The same claim, carried to a new reader",
+            "A ledger of what survived the rewrite",
+            "Nine named drifts, caught before they ship",
+        ],
+        meta="9 named drifts  ·  fidelity ledger",
     ),
 }
 
@@ -94,7 +125,13 @@ def build(cfg, src_path):
 
     # 1. Canvas: real paper texture from the artwork's own empty right side,
     #    mirrored to fill 2:1 without repeating a visible edge.
-    tex = im.crop((896, 192, 1536, 832))
+    #
+    #    The default patch assumes the artwork is empty from x=896. Artwork that
+    #    extends further right needs its own patch, or the mirror smears real
+    #    content across the card: metaphrasis carries a binary field to x=906
+    #    and printed stray digits down both edges before this was configurable.
+    #    Any patch is resized to 640, so it need not already be square.
+    tex = im.crop(cfg.get("tex", (896, 192, 1536, 832))).resize((640, H), Image.LANCZOS)
     canvas = Image.new("RGB", (W, H))
     canvas.paste(tex, (0, 0))
     canvas.paste(tex.transpose(Image.FLIP_LEFT_RIGHT), (640, 0))
@@ -125,7 +162,17 @@ def build(cfg, src_path):
     d = ImageDraw.Draw(canvas)
     y = 148
 
-    tracked(d, (col_x, y), cfg["kicker"], ImageFont.truetype(str(F_DISPLAY), 25), GOLD, 5.5)
+    # Fit the kicker to the column. It is letterspaced, so it overruns long
+    # before the headline does, and an overrun is invisible here and obvious on
+    # someone else's timeline.
+    k_size, k_track = 25, 5.5
+    while k_size > 15:
+        k_font = ImageFont.truetype(str(F_DISPLAY), k_size)
+        if sum(k_font.getlength(c) + k_track for c in cfg["kicker"]) - k_track <= col_w:
+            break
+        k_size -= 1
+        k_track = max(2.0, k_track - 0.35)
+    tracked(d, (col_x, y), cfg["kicker"], k_font, GOLD, k_track)
     y += 44
 
     head_font = ImageFont.truetype(str(F_DISPLAY), 45)
@@ -146,7 +193,14 @@ def build(cfg, src_path):
     # Bottom line carries facts, never the repo URL. This card is only ever seen
     # attached to that URL, so printing it tells the viewer where they already
     # are and spends the last legible line on nothing.
-    tracked(d, (col_x, H - 140), cfg["meta"], ImageFont.truetype(str(F_MONOISH), 21), MUTED, 1.4)
+    #
+    # Anchored to the bottom, but pushed down if the column ran long: the fixed
+    # H-140 assumed a two-line headline, and a three-line one printed the meta
+    # straight through the last bullet.
+    meta_y = max(H - 140, y + 14)
+    if meta_y > H - 40:
+        raise SystemExit(f"Column overruns the card by {meta_y - (H - 40)}px. Shorten the headline.")
+    tracked(d, (col_x, meta_y), cfg["meta"], ImageFont.truetype(str(F_MONOISH), 21), MUTED, 1.4)
 
     out = HERE / cfg["out"]
     canvas.save(out, optimize=True)

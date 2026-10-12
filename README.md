@@ -111,7 +111,9 @@ With it, that drift is auditable.
 
 ## License
 
-MIT
+Not open source. All rights reserved. See [LICENSE](LICENSE).
+
+Licences are sold: https://www.agensi.io/skills/janus-positioning-from-contradiction
 
 ---
 
